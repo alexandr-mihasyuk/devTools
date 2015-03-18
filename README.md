@@ -29,7 +29,9 @@ go to folder with project
 ```
  $ cd path/to/project
 ```
-copy config.local.sample.php to config.local.php (in git ignore) and edit values of constants
+copy config.local.sample.php to config.local.php (in git ignore)
+
+then edit values of constants
 ```
  $ cp config.local.sample.php config.local.php
 ```
