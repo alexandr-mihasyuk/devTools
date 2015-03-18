@@ -3,10 +3,11 @@ Work with Redmine throught API
 
 
 # Cloning work copy
+```
  $ git clone https://github.com/alexandr-mihasyuk/redmineApiTools.git
  $ cd redmineApiTools
  $ composer update -o
-
+```
 
 # Usage
 
