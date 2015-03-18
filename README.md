@@ -1,15 +1,16 @@
 # remineApiTools
 Work with Redmine throught API
+
 Now available creating branch by redmine issue number
 
-# Cloning work copy
+## Cloning work copy
 ```
  $ git clone https://github.com/alexandr-mihasyuk/redmineApiTools.git
  $ cd redmineApiTools
  $ composer update -o
 ```
 
-# Usage
+## Usage
 
 create folder "bin" in your home dir
 ```
