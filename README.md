@@ -1,6 +1,6 @@
 # remineApiTools
 Work with Redmine throught API
-
+Now available creating branch by redmine issue number
 
 # Cloning work copy
 ```
