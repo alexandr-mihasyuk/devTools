@@ -12,7 +12,19 @@ Now available creating branch by redmine issue number
 
 ## Usage
 
-create folder "bin" in your home dir
+go to folder with redmineApiTools project
+```
+ $ cd path/to/redmineApiTools
+```
+copy config.local.sample.php to config.local.php (in git ignore)
+```
+ $ cp config.local.sample.php config.local.php
+```
+then edit values of constants
+```
+$ vim config.local.php
+```
+after editing local config create folder "bin" in your home dir
 ```
  $ cd ~
  $ mkdir bin
@@ -25,17 +37,7 @@ make executable new link
 ```
  $ chmod +x ~/bin/createBranch
 ```
-go to folder with project
-```
- $ cd path/to/project
-```
-copy config.local.sample.php to config.local.php (in git ignore)
-
-then edit values of constants
-```
- $ cp config.local.sample.php config.local.php
-```
-then run tool
+then go to your phoenix project directory and run tool
 ```
  $ createBranch --issue=999999
 ```
