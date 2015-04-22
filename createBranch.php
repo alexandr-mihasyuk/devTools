@@ -38,6 +38,11 @@ class BranchCreator
     private $branchName;
 
     /**
+     * @var array
+     */
+    private $redmineData;
+
+    /**
      * @param DateTime $date
      * @param \Redmine\Client $redmineClient
      * @param int $issueId
@@ -52,7 +57,10 @@ class BranchCreator
     public function run()
     {
         $branchName = $this->getBranchName();
-        $this->updateRedmineBranch($branchName);
+        $this->setRedmineBranch($branchName);
+        $this->setRedmineStatus('In Progress');
+        $this->setRedmineAssignedTo();
+        $this->updateRedmineIssue();
 
         return $branchName;
     }
@@ -88,17 +96,29 @@ class BranchCreator
     /**
      * @param string $branchName
      */
-    private function updateRedmineBranch($branchName)
+    private function setRedmineBranch($branchName)
     {
-        $data = [
-            'custom_fields'=>[
-                3=>[
+        $this->redmineData['custom_fields'][3] = [
                     'id'=>1,
                     'value'=>$branchName
-                ]
-            ]
-        ];
-        $this->redmineClient->api('issue')->update($this->issueId, $data);
+                ];
+    }
+
+    private function setRedmineStatus($status)
+    {
+        $statusId = $this->redmineClient->api('issue_status')->getIdByName($status);
+        $this->redmineData['status_id'] = $statusId;
+    }
+
+    public function updateRedmineIssue()
+    {
+        $this->redmineClient->api('issue')->update($this->issueId, $this->redmineData);
+    }
+
+    public function setRedmineAssignedTo()
+    {
+        $userData = $this->redmineClient->api('user')->getCurrentUser();
+        $this->redmineData['assigned_to_id'] = $userData['user']['id'];
     }
 
     /**
