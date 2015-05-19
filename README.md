@@ -7,7 +7,7 @@ Now available creating branch by redmine issue number
 ```
  $ git clone https://github.com/alexandr-mihasyuk/redmineApiTools.git
  $ cd redmineApiTools
- $ composer update -o
+ $ composer.phar update -o
 ```
 
 ## Usage
