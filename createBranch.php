@@ -17,6 +17,8 @@ class BranchCreator
 
     const BRANCH_FORMAT_SURNAME = \Config::BRANCH_FORMAT_SURNAME;
 
+    const BRANCH_FORMAT_DEPARTMENT = \Config::BRANCH_FORMAT_DEPARTMENT;
+
     /**
      * @var Redmine\Client
      */
@@ -72,7 +74,9 @@ class BranchCreator
         $branchName .= $this->branchDate();
         $branchName .= '-';
         $branchName .= $this->branchSurname();
-        $branchName .= '-';
+	$branchName .= '-';
+	$branchName .= $this->getBranchDepartment();
+	$branchName .= '-';
         $branchName .= $this->issueId;
         $branchName .= '_';
         $branchName .= $this->issuePreparedTitle();
@@ -168,6 +172,14 @@ class BranchCreator
             $this->branchName = $this->generateName();
         }
         return $this->branchName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBranchDepartment()
+    {
+        return self::BRANCH_FORMAT_DEPARTMENT;
     }
 
 }
