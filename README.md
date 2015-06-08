@@ -32,12 +32,18 @@ after editing local config create folder "bin" in your home dir
 make symlink to shell script from redmineApiTools
 ```
  $ ln -s absolute/path/to/redmineApiTools/createBranch.sh ~/bin/createBranch
+ $ ln -s absolute/path/to/redmineApiTools/branchDiffApply.sh ~/bin/branchDiffApply
 ```
 make executable new link
 ```
  $ chmod +x ~/bin/createBranch
+ $ chmod +x ~/bin/branchDiffApply
 ```
 then go to your phoenix project directory and run tool
 ```
  $ createBranch --issue=999999
+```
+or in your git repo run this for creating and attaching diff file to issue from branch
+```
+$ branchDiffApply
 ```
