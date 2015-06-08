@@ -16,11 +16,11 @@ $dir = $argv[2];
 $matches = explode('-', $diffFileName);
 $matches = explode("_", $matches[4]);
 $issueId = $matches[0];
-$branchDiffApply = new BranchDiffApply($client);
+$branchDiffApply = new BranchDiffAttach($client);
 
 $branchDiffApply->run($dir, $diffFileName, (int)$issueId);
 
-class BranchDiffApply
+class BranchDiffAttach
 {
     private $client;
 

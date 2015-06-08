@@ -1,5 +1,5 @@
 #!/bin/bash
-runScript="$HOME/redmineApiTools/branchDiff.php"
+runScript="$HOME/redmineApiTools/branchDiffAttach.php"
 phpBin=`which php`
 branchDiffScript="$phpBin $runScript"
 masterBranch='origin/live'
