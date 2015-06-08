@@ -7,7 +7,7 @@ Now available creating branch by redmine issue number
 ```
  $ git clone https://github.com/alexandr-mihasyuk/redmineApiTools.git
  $ cd redmineApiTools
- $ composer.phar update -o
+ $ php composer.phar update -o
 ```
 
 ## Usage
@@ -28,6 +28,8 @@ after editing local config create folder "bin" in your home dir
 ```
  $ cd ~
  $ mkdir bin
+ $ echo 'PATH=$PATH:~/bin' >> ~/.bashrc
+ $ echo 'export PATH' >> ~/.bashrc
 ```
 make symlink to shell script from redmineApiTools
 ```
