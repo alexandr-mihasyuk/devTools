@@ -62,6 +62,7 @@ class BranchCreator
         $this->setRedmineBranch($branchName);
         $this->setRedmineStatus('In Progress');
         $this->setRedmineAssignedTo();
+        $this->setRedmineImplementer();
         $this->updateRedmineIssue();
 
         return $branchName;
@@ -123,6 +124,15 @@ class BranchCreator
     {
         $userData = $this->redmineClient->api('user')->getCurrentUser();
         $this->redmineData['assigned_to_id'] = $userData['user']['id'];
+    }
+
+    public function setRedmineImplementer()
+    {
+        $userData = $this->redmineClient->api('user')->getCurrentUser();
+        $this->redmineData['custom_fields'][0] = [
+                    'id'=>99,
+                    'value'=>$userData['user']['id']
+                ];
     }
 
     /**
