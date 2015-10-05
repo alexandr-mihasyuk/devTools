@@ -1,5 +1,15 @@
 {
     "require": {
-        "kbsali/redmine-api": "~1.0"
+        "kbsali/redmine-api": "~1.0",
+        "cpliakas/jira": "~1.0",
+        "phpunit/phpunit": "4.8.*",
+        "ashevchuk/phpunit-plus": "~1.2",
+        "symfony/console": "~2.7",
+        "symfony/filesystem": "~2.7",
+        "symfony/config": "~2.7",
+        "monolog/monolog": "~1.17"
+    },
+    "autoload": {
+        "psr-0": {"": "src/"}
     }
 }

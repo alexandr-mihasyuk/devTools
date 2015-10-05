@@ -1,0 +1,8 @@
+parameters:
+  prefix: dev
+  dateFormat: Ymd
+  surname: %surname%
+  department: payment
+
+format:
+  %prefix%-%date%-%surname%-%department%-%issueId%_%issueTitle%
